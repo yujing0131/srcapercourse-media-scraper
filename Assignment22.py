@@ -10,7 +10,7 @@ import os #利用此套件建立資料存放爬取的圖片
 
 #1.利用selenium特見操作網頁
 driver = webdriver.Chrome()
-driver.get('https://pixabay.com/images/search/car/')
+driver.get('https://pixabay.com/images/search/computer/')
 #設定滑鼠滾動10次
 for i in range(10):
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
