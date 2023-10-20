@@ -4,7 +4,7 @@ import os
 import glob #合併ts檔案時需要取得名稱
 
 #1.下載m3u8檔案
-response = requests.get('https://edgecast-cf-prod.yahoo.net/cp-video-transcode/production/4053cabc-8a9b-3b88-9002-357db5cdebfb/2023-10-13/03-00-58/3fa816b6-765d-5c50-a635-0d55be7d43a8/stream_1280x720x935_v2.m3u8')
+response = requests.get('https://edgecast-cf-prod.yahoo.net/cp-video-transcode/production/dffe1349-8309-32aa-8236-388a0bb42653/2023-10-18/08-34-16/9a02a617-3d54-55b9-b84c-b2b9f1c6e8fc/stream_1280x720x981_v2.m3u8')
 #若專案裡面沒有video的資料夾則進行建立
 if not os.path.exists("video"):
     os.mkdir('video')
@@ -17,7 +17,7 @@ ts_url_list = []
 with open("video\\trailer.m3u8", 'r',encoding='utf-8') as file:
     contents = file.readlines()
     #用一個變數儲存ts網址
-    base_url = "https://edgecast-cf-prod.yahoo.net/cp-video-transcode/production/4053cabc-8a9b-3b88-9002-357db5cdebfb/2023-10-13/03-00-58/3fa816b6-765d-5c50-a635-0d55be7d43a8/" 
+    base_url = "https://edgecast-cf-prod.yahoo.net/cp-video-transcode/production/dffe1349-8309-32aa-8236-388a0bb42653/2023-10-18/08-34-16/9a02a617-3d54-55b9-b84c-b2b9f1c6e8fc/" 
     #用for迴圈讀取m3u8檔案內每一行內容，判斷每一行的結尾是否為.ts
     for content in contents:
         if content.endswith('ts\n'):#若結尾是ts換行，則該ts檔案網址就是base_url+檔案名稱，但需要將換行符號移除
